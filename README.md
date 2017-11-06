@@ -31,6 +31,7 @@ For phase 3 we want to focus on building quality reports that provide meaningful
 * Send messages to other caregivers
 * Reward system that tracks points that allow individual to earn a reward
 * Allow location tracking of individual
+* Watch module (Android Wear / Apple Watch)
 
 ## Built With
 
@@ -38,6 +39,7 @@ For phase 3 we want to focus on building quality reports that provide meaningful
 * [Kotlin](https://kotlinlang.org/)
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * [Android Studio](https://developer.android.com/studio/index.html)
+* [Android 5.0 - API Level: 21](https://developer.android.com/about/versions/android-5.0.html)
 
 ## Contributing
 
