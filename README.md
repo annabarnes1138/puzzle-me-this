@@ -39,7 +39,7 @@ For phase 3 we want to focus on building quality reports that provide meaningful
 * [Kotlin](https://kotlinlang.org/)
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * [Android Studio](https://developer.android.com/studio/index.html)
-* [Android 5.0 - API Level: 21](https://developer.android.com/about/versions/android-5.0.html)
+* [Android 6.0 (Marshmallow) - API Level: 23](https://developer.android.com/about/versions/marshmallow/android-6.0.html)
 
 ## Contributing
 
