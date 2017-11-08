@@ -6,4 +6,8 @@
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>
     <color name="colorAccent">#c8e8ff</color>
+    <color name="behaviorCardBackground">#FFFFFF</color>
+    <color name="healthCardBackground">#FFFFFF</color>
+    <color name="dietCardBackground">#FFFFFF</color>
+    <color name="sleepCardBackground">#FFFFFF</color>
 </resources>
