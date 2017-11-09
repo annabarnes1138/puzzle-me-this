@@ -9,13 +9,21 @@ import java.time.ZonedDateTime;
 public abstract class Event
 {
     EventType type;
-    SubType subType;
+    EventSubType subType;
     ZonedDateTime timeStamp;
     String comments;
 
     public Event(EventType type)
     {
         this.type = type;
+    }
+
+    public Event(EventType type, EventSubType subType, ZonedDateTime timeStamp, String comments)
+    {
+        this.type = type;
+        this.subType = subType;
+        this.timeStamp = timeStamp;
+        this.comments = comments;
     }
 
     public EventType getType()
@@ -28,12 +36,12 @@ public abstract class Event
         this.type = type;
     }
 
-    public SubType getSubType()
+    public EventSubType getSubType()
     {
         return subType;
     }
 
-    public void setSubType(SubType subType)
+    public void setSubType(EventSubType subType)
     {
         this.subType = subType;
     }

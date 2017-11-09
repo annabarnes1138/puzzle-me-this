@@ -25,15 +25,15 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder
     {
-        public TextView timestamp, comments;
-        public ImageView subtype;
+        public TextView timestamp, subtype_name;
+        public ImageView subtype_icon;
 
         public MyViewHolder(View view)
         {
             super(view);
-            comments = (TextView) view.findViewById(R.id.comments);
+            subtype_name = (TextView) view.findViewById(R.id.subtype_name);
             timestamp = (TextView) view.findViewById(R.id.timestamp);
-            subtype = (ImageView) view.findViewById(R.id.subtype);
+            subtype_icon = (ImageView) view.findViewById(R.id.subtype_icon);
         }
     }
 
@@ -56,8 +56,8 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
     {
         Event event = eventList.get(position);
         holder.timestamp.setText(event.getTimeStamp().toString());
-        holder.comments.setText(event.getComments());
-        Glide.with(mContext).load(event.getSubType().getIcon()).into(holder.subtype);
+        holder.subtype_name.setText(event.getSubType().getName());
+        Glide.with(mContext).load(event.getSubType().getIcon()).into(holder.subtype_icon);
     }
 
     @Override
