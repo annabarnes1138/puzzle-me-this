@@ -8,33 +8,16 @@ import java.time.ZonedDateTime;
 
 public class Behavior extends Event
 {
-    private boolean isGood;
     private String approach;
 
-    public Behavior()
+    public Behavior(BehaviorSubType type)
     {
-        super(EventType.BEHAVIOR);
+        super(type.isGood() == true ? EventType.GOOD_BEHAVIOR : EventType.BAD_BEHAVIOR);
     }
 
-    public Behavior(EventSubType type, boolean isGood, ZonedDateTime timestamp, String comments)
+    public Behavior(BehaviorSubType type, ZonedDateTime timestamp, String comments)
     {
-        super(EventType.BEHAVIOR, type, timestamp, comments);
-        this.isGood(isGood);
-    }
-
-    public boolean isGood()
-    {
-        return isGood;
-    }
-
-    public void isGood(boolean good)
-    {
-        isGood = good;
-    }
-
-    public void setGood(boolean good)
-    {
-        isGood = good;
+        super(type.isGood() == true ? EventType.GOOD_BEHAVIOR : EventType.BAD_BEHAVIOR, type, timestamp, comments);
     }
 
     public String getApproach()

@@ -7,7 +7,8 @@ import net.stecky.puzzlemethis.R;
 
 public enum EventType
 {
-    BEHAVIOR(R.color.behaviorCardBackground),
+    GOOD_BEHAVIOR(R.color.goodBehaviorCardBackground),
+    BAD_BEHAVIOR(R.color.badBehaviorCardBackground),
     HEALTH(R.color.healthCardBackground),
     DIET(R.color.dietCardBackground),
     SLEEP(R.color.sleepCardBackground);

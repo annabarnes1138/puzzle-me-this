@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 
 import net.stecky.puzzlemethis.events.Behavior;
+import net.stecky.puzzlemethis.events.BehaviorSubType;
 import net.stecky.puzzlemethis.events.Event;
 import net.stecky.puzzlemethis.events.EventSubType;
 
@@ -126,8 +127,10 @@ public class EventActivity extends AppCompatActivity
 
     private void prepareEvents()
     {
-        Behavior b = new Behavior(new EventSubType("Aggressive towards another child", R.drawable.aggression), false,
-                                  LocalDateTime.of(2017,11,9,11,1).atZone(ZoneId.systemDefault()), "");
+        BehaviorSubType type = new BehaviorSubType("Aggressive towards another child", R.drawable.aggression, false);
+        Behavior b = new Behavior(type,
+                                  LocalDateTime.of(2017,11,9,11,1).atZone(ZoneId.systemDefault()),
+                                  "these are comments");
 
         eventsList.add(b);
     }

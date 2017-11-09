@@ -1,6 +1,9 @@
 package net.stecky.puzzlemethis;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +37,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
             subtype_name = (TextView) view.findViewById(R.id.subtype_name);
             timestamp = (TextView) view.findViewById(R.id.timestamp);
             subtype_icon = (ImageView) view.findViewById(R.id.subtype_icon);
+
         }
     }
 
@@ -58,6 +62,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyViewHold
         holder.timestamp.setText(event.getTimeStamp().toString());
         holder.subtype_name.setText(event.getSubType().getName());
         Glide.with(mContext).load(event.getSubType().getIcon()).into(holder.subtype_icon);
+        ((CardView)holder.itemView).setCardBackgroundColor(mContext.getColor(event.getType().getBackgroundColor()));
     }
 
     @Override
