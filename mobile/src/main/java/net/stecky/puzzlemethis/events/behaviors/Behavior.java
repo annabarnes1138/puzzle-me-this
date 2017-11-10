@@ -1,4 +1,7 @@
-package net.stecky.puzzlemethis.events;
+package net.stecky.puzzlemethis.events.behaviors;
+
+import net.stecky.puzzlemethis.events.Event;
+import net.stecky.puzzlemethis.events.EventType;
 
 import java.time.ZonedDateTime;
 
@@ -6,7 +9,7 @@ import java.time.ZonedDateTime;
  * Created by sb185219 on 11/8/2017.
  */
 
-public class Behavior extends Event
+public abstract class Behavior extends Event
 {
     private String approach;
 

@@ -1,29 +1,25 @@
 package net.stecky.puzzlemethis;
 
 import android.content.res.Resources;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
-import net.stecky.puzzlemethis.events.Behavior;
-import net.stecky.puzzlemethis.events.BehaviorSubType;
+import net.stecky.puzzlemethis.events.behaviors.BadBehavior;
+import net.stecky.puzzlemethis.events.behaviors.Behavior;
+import net.stecky.puzzlemethis.events.behaviors.BehaviorSubType;
 import net.stecky.puzzlemethis.events.Event;
-import net.stecky.puzzlemethis.events.EventSubType;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -33,7 +29,7 @@ import java.util.List;
 public class EventActivity extends AppCompatActivity
 {
     private RecyclerView recyclerView;
-    private EventsAdapter adapter;
+    private EventAdapter adapter;
     private List<Event> eventsList;
 
     @Override
@@ -49,7 +45,7 @@ public class EventActivity extends AppCompatActivity
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         eventsList = new ArrayList<>();
-        adapter = new EventsAdapter(this, eventsList);
+        adapter = new EventAdapter(this, eventsList);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -76,7 +72,7 @@ public class EventActivity extends AppCompatActivity
     private void initCollapsingToolbar() {
         final CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle("Test");
+        collapsingToolbar.setTitle(" ");
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         appBarLayout.setExpanded(true);
 
@@ -91,7 +87,7 @@ public class EventActivity extends AppCompatActivity
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + verticalOffset == 0) {
-                    collapsingToolbar.setTitle(getString(R.string.app_name));
+                    collapsingToolbar.setTitle(getString(R.string.event_activity_title));
                     isShow = true;
                 } else if (isShow) {
                     collapsingToolbar.setTitle(" ");
@@ -105,7 +101,7 @@ public class EventActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_event, menu);
+        getMenuInflater().inflate(R.menu.menu_options, menu);
         return true;
     }
 
@@ -127,10 +123,11 @@ public class EventActivity extends AppCompatActivity
 
     private void prepareEvents()
     {
-        BehaviorSubType type = new BehaviorSubType("Aggressive towards another child", R.drawable.aggression, false);
-        Behavior b = new Behavior(type,
-                                  LocalDateTime.of(2017,11,9,11,1).atZone(ZoneId.systemDefault()),
-                                  "these are comments");
+        BehaviorSubType type = new BehaviorSubType("Aggression", R.drawable.aggression, false);
+        Behavior b = new BadBehavior(type,
+                                     LocalDateTime.of(2017,11,9,11,1).atZone(ZoneId.systemDefault()),
+                                     "Steven got upset because Becky took his favorite toy. He then proceeded to kick Becky.",
+                                     3, "2 minutes");
 
         eventsList.add(b);
     }

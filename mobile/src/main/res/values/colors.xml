@@ -3,6 +3,7 @@
     <color name="colorPrimary">#125688</color>
     <color name="colorPrimaryDark">#125688</color>
     <color name="textColorPrimary">#FFFFFF</color>
+    <color name="textColorYellow">#fff59d</color>
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>
     <color name="colorAccent">#c8e8ff</color>
@@ -11,4 +12,9 @@
     <color name="healthCardBackground">#2196f3</color>
     <color name="dietCardBackground">#ffc107</color>
     <color name="sleepCardBackground">#607d8b</color>
+    <color name="severity_bar_color">#558b2f</color>
+    <color name="severity_bar_color1">#ffc107</color>
+    <color name="severity_bar_color2">#f44336</color>
+    <color name="severity_rim_color">#eceff1</color>
+    <color name="severity_contour_color">#b0bec5</color>
 </resources>

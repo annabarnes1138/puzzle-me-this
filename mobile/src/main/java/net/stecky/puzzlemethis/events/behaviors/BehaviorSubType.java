@@ -1,4 +1,6 @@
-package net.stecky.puzzlemethis.events;
+package net.stecky.puzzlemethis.events.behaviors;
+
+import net.stecky.puzzlemethis.events.EventSubType;
 
 /**
  * Created by sb185219 on 11/9/2017.
