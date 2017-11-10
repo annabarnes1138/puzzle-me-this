@@ -17,9 +17,11 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 
 import net.stecky.puzzlemethis.events.behaviors.BadBehavior;
-import net.stecky.puzzlemethis.events.behaviors.Behavior;
+import net.stecky.puzzlemethis.events.behaviors.BehaviorBase;
 import net.stecky.puzzlemethis.events.behaviors.BehaviorSubType;
 import net.stecky.puzzlemethis.events.Event;
+import net.stecky.puzzlemethis.events.health.HealthSubType;
+import net.stecky.puzzlemethis.events.health.MedicineAdministration;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -124,12 +126,16 @@ public class EventActivity extends AppCompatActivity
     private void prepareEvents()
     {
         BehaviorSubType type = new BehaviorSubType("Aggression", R.drawable.aggression, false);
-        Behavior b = new BadBehavior(type,
-                                     LocalDateTime.of(2017,11,9,11,1).atZone(ZoneId.systemDefault()),
-                                     "Steven got upset because Becky took his favorite toy. He then proceeded to kick Becky.",
-                                     3, "2 minutes");
-
+        BehaviorBase b = new BadBehavior(type,
+                                         LocalDateTime.of(2017,11,9,11,1).atZone(ZoneId.systemDefault()),
+                                         "Steven got upset because Becky took his favorite toy. He then proceeded to kick Becky.",
+                                         3, "2 minutes");
         eventsList.add(b);
+
+        MedicineAdministration m = new MedicineAdministration("guanfacine",
+                                                              LocalDateTime.of(2017,11,9,19,46).atZone(ZoneId.systemDefault()),
+                                                              "2 hours late due to field trip.");
+        eventsList.add(m);
     }
 
     /**

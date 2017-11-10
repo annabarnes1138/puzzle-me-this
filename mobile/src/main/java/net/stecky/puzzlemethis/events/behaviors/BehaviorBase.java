@@ -9,16 +9,16 @@ import java.time.ZonedDateTime;
  * Created by sb185219 on 11/8/2017.
  */
 
-public abstract class Behavior extends Event
+public abstract class BehaviorBase extends Event
 {
     private String approach;
 
-    public Behavior(BehaviorSubType type)
+    public BehaviorBase(BehaviorSubType type)
     {
         super(type.isGood() == true ? EventType.GOOD_BEHAVIOR : EventType.BAD_BEHAVIOR);
     }
 
-    public Behavior(BehaviorSubType type, ZonedDateTime timestamp, String comments)
+    public BehaviorBase(BehaviorSubType type, ZonedDateTime timestamp, String comments)
     {
         super(type.isGood() == true ? EventType.GOOD_BEHAVIOR : EventType.BAD_BEHAVIOR, type, timestamp, comments);
     }

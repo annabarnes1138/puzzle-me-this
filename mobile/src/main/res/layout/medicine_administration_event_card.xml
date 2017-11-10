@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/medicine_administration_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    android:elevation="3dp"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardBackgroundColor="@color/healthCardBackground"
+    android:foreground="?selectableItemBackground"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <include layout="@layout/event_subtype_icon" />
+
+        <include layout="@layout/event_subtype_name" />
+
+        <include layout="@layout/event_comments" />
+
+        <include layout="@layout/event_timestamp" />
+
+        <include layout="@layout/overflow_menu_dots" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

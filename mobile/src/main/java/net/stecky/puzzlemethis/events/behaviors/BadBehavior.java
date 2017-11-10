@@ -6,7 +6,7 @@ import java.time.ZonedDateTime;
  * Created by sb185219 on 11/9/2017.
  */
 
-public class BadBehavior extends Behavior
+public class BadBehavior extends BehaviorBase
 {
     private int severity;
     private String duration;

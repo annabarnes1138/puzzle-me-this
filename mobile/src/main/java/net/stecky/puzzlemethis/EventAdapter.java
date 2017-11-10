@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import net.stecky.puzzlemethis.events.Event;
 import net.stecky.puzzlemethis.viewholders.BadBehaviorViewHolder;
 import net.stecky.puzzlemethis.viewholders.BaseEventViewHolder;
+import net.stecky.puzzlemethis.viewholders.MedicineAdministrationViewHolder;
 
 import java.util.List;
 
@@ -31,7 +32,8 @@ public class EventAdapter extends RecyclerView.Adapter<BaseEventViewHolder>
     {
         switch(viewType)
         {
-            case 0: return new BadBehaviorViewHolder(parent);
+            case 1: return new BadBehaviorViewHolder(parent);
+            case 2: return new MedicineAdministrationViewHolder(parent);
         }
 
         return null;
@@ -41,16 +43,18 @@ public class EventAdapter extends RecyclerView.Adapter<BaseEventViewHolder>
     public void onBindViewHolder(BaseEventViewHolder holder, int position)
     {
         Event event = eventList.get(position);
-
-        switch(holder.getItemViewType())
-        {
-            case 0: holder.populateValuesFromEvent(event);
-        }
+        holder.onBindViewHolder(event);
     }
 
     @Override
     public int getItemCount()
     {
         return eventList.size();
+    }
+
+    @Override
+    public int getItemViewType(int position)
+    {
+        return eventList.get(position).getType().ordinal();
     }
 }
