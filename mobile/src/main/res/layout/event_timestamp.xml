@@ -4,7 +4,7 @@
     android:id="@+id/timestamp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_below="@id/subtype_icon"
+    android:layout_alignParentTop="true"
     android:textSize="15sp"
     android:textColor="@color/textColorPrimary"
-    tools:showIn="@layout/bad_behavior_event_card" />
+    tools:text="2 hours ago" />
