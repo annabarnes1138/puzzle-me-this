@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/timestamp_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/timestamp_icon_desc"
+            android:src="@drawable/calendar_clock"
+            android:tint="@color/icon_active" />
+
+        <TextView
+            android:id="@+id/timestamp_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/timestamp_icon"
+            tools:text="2 hours ago" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/status_icons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/timestamp">
+
+        <ImageView
+            android:id="@+id/message_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/message_icon_desc"
+            android:src="@drawable/message_text_outline"
+            android:tint="@color/icon_inactive" />
+
+        <ImageView
+            android:id="@+id/image_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/message_icon"
+            android:contentDescription="@string/image_icon_desc"
+            android:src="@drawable/image"
+            android:tint="@color/icon_inactive" />
+
+        <ImageView
+            android:id="@+id/video_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/image_icon"
+            android:contentDescription="@string/video_icon_desc"
+            android:src="@drawable/video"
+            android:tint="@color/icon_inactive" />
+
+        <ImageView
+            android:id="@+id/insight_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/video_icon"
+            android:contentDescription="@string/insight_icon_desc"
+            android:src="@drawable/lightbulb_on_outline"
+            android:tint="@color/icon_inactive" />
+
+        <ImageView
+            android:id="@+id/solution_used_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/insight_icon"
+            android:contentDescription="@string/solution_icon_desc"
+            android:src="@drawable/auto_fix"
+            android:tint="@color/icon_inactive" />
+
+        <ImageView
+            android:id="@+id/late_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/solution_used_icon"
+            android:contentDescription="@string/late_icon_desc"
+            android:src="@drawable/clock_alert"
+            android:tint="@color/icon_inactive" />
+
+    </RelativeLayout>
+</merge>
