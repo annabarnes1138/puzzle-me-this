@@ -1,79 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:progress_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/bad_behavior_card_view"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:layout_gravity="center"
-    android:layout_margin="5dp"
-    android:elevation="3dp"
-    card_view:cardCornerRadius="12dp"
-    card_view:cardBackgroundColor="@color/badBehaviorCardBackground"
-    android:foreground="?selectableItemBackground"
-    android:clickable="true">
+    android:layout_height="90dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp">
+        android:padding="5dp">
 
-        <at.grabner.circleprogress.CircleProgressView
-            android:id="@+id/severity"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            progress_view:cpv_autoTextSize="true"
-            progress_view:cpv_maxValue="10"
-            progress_view:cpv_fillColor="@color/windowBackground"
-            progress_view:cpv_barColor="@color/severity_bar_color"
-            progress_view:cpv_barColor1="@color/severity_bar_color1"
-            progress_view:cpv_barColor2="@color/severity_bar_color2"
-            progress_view:cpv_barWidth="8dp"
-            progress_view:cpv_rimColor="@color/severity_rim_color"
-            progress_view:cpv_rimWidth="10dp"
-            progress_view:cpv_innerContourSize="0dp"
-            progress_view:cpv_innerContourColor="@color/severity_contour_color"
-            progress_view:cpv_outerContourSize="0dp"
-            progress_view:cpv_outerContourColor="@color/severity_contour_color"
-            progress_view:cpv_textMode="Value"
-            progress_view:cpv_autoTextColor="true"/>
-
-        <include
-            layout="@layout/event_subtype_name"
+        <TextView
+            android:id="@+id/event_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@+id/severity" />
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@layout/event_severity_circle"
+            android:textSize="24sp"
+            tools:text="Event Name" />
 
-        <!--<include layout="@layout/event_comments"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_toEndOf="@+id/severity"-->
-            <!--android:layout_below="@layout/event_subtype_name"/>-->
+        <include layout="@layout/event_severity_circle" />
 
-        <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
-            <!--android:id="@+id/duration"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_toEndOf="@id/subtype_icon"-->
-            <!--android:layout_below="@id/comments"-->
-            <!--android:textSize="15sp"-->
-            <!--android:textColor="@color/colorAccent"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--tools:text="duration: 5 minutes"/>-->
+        <include layout="@layout/event_duration" />
 
-        <include
-            layout="@layout/event_timestamp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/subtype_name"
-            android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@+id/severity" />
+        <include layout="@layout/event_card_status_bar" />
 
-        <!--<include layout="@layout/overflow_menu_dots" />-->
-
+        <include layout="@layout/bad_behavior_category" />
     </RelativeLayout>
-
 </android.support.v7.widget.CardView>

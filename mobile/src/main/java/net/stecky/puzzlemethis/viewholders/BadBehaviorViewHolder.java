@@ -15,21 +15,19 @@ import at.grabner.circleprogress.CircleProgressView;
 
 public class BadBehaviorViewHolder extends BaseEventViewHolder
 {
-    public TextView behavior_name, duration;
+    public TextView duration;
     public CircleProgressView severity;
 
     public BadBehaviorViewHolder(ViewGroup parent)
     {
         super(parent, R.layout.bad_behavior_event_card);
-        behavior_name = this.itemView.findViewById(R.id.subtype_name);
-        duration = this.itemView.findViewById(R.id.duration);
+        duration = this.itemView.findViewById(R.id.duration_text);
         severity = this.itemView.findViewById(R.id.severity);
     }
 
     @Override
     protected void populateValuesFromEvent(Event event)
     {
-        this.behavior_name.setText(event.getSubType().getName());
         this.duration.setText("duration: " + ((BadBehavior)event).getDuration());
         severity.setValue(((BadBehavior)event).getSeverity());
     }

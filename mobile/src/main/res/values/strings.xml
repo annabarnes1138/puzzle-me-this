@@ -5,4 +5,7 @@
     <string name="subtype_icon_description">event subtype icon</string>
     <string name="overflow_menu_description">overflow menu dots</string>
     <string name="event_details_action_title">Show Details</string>
+    <string name="behavior_icon_text">Behavior</string>
+    <string name="duration_icon_text">duration icon</string>
+    <string name="timestamp_icon_text">timestamp icon</string>
 </resources>

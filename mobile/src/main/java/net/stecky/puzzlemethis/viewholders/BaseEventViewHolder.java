@@ -25,27 +25,23 @@ import net.stecky.puzzlemethis.events.Event;
 public abstract class BaseEventViewHolder extends RecyclerView.ViewHolder
 {
     protected Context mContext;
-    protected TextView timestamp, comments;
-    protected ImageView subtype_icon, overflow;
+    protected TextView event_name, timestamp;
 
     public BaseEventViewHolder(ViewGroup parent, int layoutResource)
     {
         super(LayoutInflater.from(parent.getContext()).inflate(layoutResource, parent, false));
         mContext = parent.getContext();
         timestamp = this.itemView.findViewById(R.id.timestamp);
-        comments = this.itemView.findViewById(R.id.comments);
-        subtype_icon = this.itemView.findViewById(R.id.subtype_icon);
-        overflow = this.itemView.findViewById(R.id.overflow);
+        event_name = this.itemView.findViewById(R.id.event_name);
     }
 
     protected abstract void populateValuesFromEvent(Event event);
 
     public void onBindViewHolder(Event event)
     {
-        this.timestamp.setText(Utils.getTimeAgo(event.getTimeStamp()));
-        this.comments.setText(event.getComments());
-        Glide.with(mContext).load(event.getSubType().getIcon()).into(subtype_icon);
-        overflow.setOnClickListener(view -> showPopupMenu(overflow));
+        this.event_name.setText(event.getSubType().getName());
+        this.timestamp.setText(Utils.INSTANCE.getTimeAgo(event.getTimeStamp()));
+
         populateValuesFromEvent(event);
     }
 

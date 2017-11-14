@@ -11,6 +11,7 @@ public abstract class Event
     EventType type;
     EventSubType subType;
     ZonedDateTime timeStamp;
+//    List<Note> notes;
     String comments;
 
     public Event(EventType type)
