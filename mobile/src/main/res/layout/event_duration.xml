@@ -12,7 +12,7 @@
         android:id="@+id/duration_icon"
         android:layout_width="16dp"
         android:layout_height="16dp"
-        android:contentDescription="@string/duration_icon_desc"
+        android:contentDescription="@string/timespan_icon_desc"
         android:src="@drawable/timer"
         android:tint="@color/icon_active" />
 

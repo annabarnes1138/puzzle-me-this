@@ -9,7 +9,7 @@ import net.stecky.puzzlemethis.events.Event
  * Created by sb185219 on 11/14/2017.
  */
 class MedicineAdministrationViewHolder(parent: ViewGroup) :
-        BaseEventViewHolder(parent, R.layout.medicine_administration_event_card)
+        BaseEventViewHolder(parent, R.layout.bad_behavior_event_card)
 {
     override fun populateValuesFromEvent(event: Event)
     {

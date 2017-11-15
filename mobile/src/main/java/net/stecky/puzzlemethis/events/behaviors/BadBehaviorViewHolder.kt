@@ -18,7 +18,7 @@ class BadBehaviorViewHolder(parent: ViewGroup) :
 
     override fun populateValuesFromEvent(event: Event)
     {
-        duration.text = (event as BadBehavior).duration
+        duration.text = (event as BadBehavior).duration.toString()
         severity.setValue(event.severity.toFloat())
     }
 }
