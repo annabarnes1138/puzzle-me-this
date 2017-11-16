@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/name_plate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/name_plate_background">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <net.stecky.puzzlemethis.RoundedImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            tools:src="@drawable/boy_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:textSize="40sp"
+            android:textColor="@android:color/white"
+            tools:text="Andrew" />
+    </LinearLayout>
+</RelativeLayout>

@@ -2,16 +2,23 @@
 <resources>
     <color name="colorPrimary">#00796b</color>
     <color name="colorPrimaryDark">#004c40</color>
-    <color name="textColorPrimary">#424242</color>
+    <color name="textColorPrimary">#a1887f</color>
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>
     <color name="colorAccent">#39796b</color>
+    <color name="status_bar_background">#efebe9</color>
     <color name="severity_bar_color">#558b2f</color>
     <color name="severity_bar_color1">#ffc107</color>
     <color name="severity_bar_color2">#f44336</color>
     <color name="severity_rim_color">#eceff1</color>
     <color name="severity_contour_color">#b0bec5</color>
+    <color name="reward_bar_color">#558b2f</color>
+    <color name="reward_bar_color1">#ffc107</color>
+    <color name="reward_bar_color2">#f44336</color>
+    <color name="reward_rim_color">#82e9de</color>
+    <color name="reward_contour_color">#00867d</color>
     <color name="icon_inactive">#eeeeee</color>
     <color name="icon_active">#616161</color>
     <color name="badBehavior">#f44336</color>
+    <color name="name_plate_bg_color">#4db6ac</color>
 </resources>
