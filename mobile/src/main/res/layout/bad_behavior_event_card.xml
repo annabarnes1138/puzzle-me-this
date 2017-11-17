@@ -1,31 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bad_behavior_event_card"
     android:layout_width="match_parent"
     android:layout_height="95dp"
-    android:layout_margin="6dp">
-
-    <RelativeLayout
+    android:layout_margin="0dp">
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/card_edge">
-
+        android:layout_height="match_parent">
         <TextView
-            android:id="@+id/event_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/bad_behavior_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_alignParentStart="true"
             android:layout_marginStart="7dp"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textColor="@color/textColorPrimary"
-            tools:text="Event Name" />
+            tools:text="Meltdown"
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent=".28"/>
 
-        <include layout="@layout/time_info"
-            android:id="@+id/include" />
+        <android.support.constraint.Barrier
+            android:id="@+id/horizontal_barrier_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="bad_behavior_name"/>
 
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="7dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_barrier_1">
 
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/timestamp_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="@string/timestamp_icon_desc"
+                        android:src="@drawable/calendar_clock"
+                        android:tint="@color/icon_active" />
+
+                    <TextView
+                        android:id="@+id/timestamp_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="top"
+                        android:textSize="12sp"
+                        tools:text="2 hours ago" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/timespan_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="@string/timespan_icon_desc"
+                        android:src="@drawable/timer"
+                        android:tint="@color/icon_active" />
+
+                    <TextView
+                        android:id="@+id/timespan_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="top"
+                        android:textSize="12sp"
+                        tools:text="5 minutes" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/message_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:contentDescription="@string/message_icon_desc"
+                        android:src="@drawable/message_text_outline"
+                        android:tint="@color/icon_active" />
+
+                    <ImageView
+                        android:id="@+id/image_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/image_icon_desc"
+                        android:src="@drawable/image"
+                        android:tint="@color/icon_inactive" />
+
+                    <ImageView
+                        android:id="@+id/video_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/video_icon_desc"
+                        android:src="@drawable/video"
+                        android:tint="@color/icon_inactive" />
+
+                    <ImageView
+                        android:id="@+id/insight_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/insight_icon_desc"
+                        android:src="@drawable/lightbulb_on_outline"
+                        android:tint="@color/icon_inactive" />
+
+                    <ImageView
+                        android:id="@+id/solution_used_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/solution_icon_desc"
+                        android:src="@drawable/auto_fix"
+                        android:tint="@color/icon_active" />
+
+                    <ImageView
+                        android:id="@+id/late_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/late_icon_desc"
+                        android:src="@drawable/clock_alert"
+                        android:tint="@color/icon_inactive" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.github.lzyzsd.circleprogress.DonutProgress
+                xmlns:dp="http://schemas.android.com/apk/res-auto"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="7dp"
+                dp:donut_suffix_text=""
+                dp:donut_unfinished_color="@color/severity_bar_color"
+                dp:donut_finished_color="@color/severity_bar_color2"
+                dp:donut_text_color="@color/badBehavior"
+                dp:donut_max="10"
+                dp:donut_unfinished_stroke_width="5dp"
+                dp:donut_circle_starting_degree="90"
+                tools:donut_progress="6"
+                />
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
     <View
         android:layout_width="5dp"
         android:layout_height="match_parent"
