@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/header_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="5dp"
+        app:cardPreventCornerOverlap="false"
+        app:contentPadding="0dp">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/name_plate"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/name_plate_background"
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent=".44"
+                android:orientation="horizontal">
+
+                <net.stecky.puzzlemethis.RoundedImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    tools:src="@drawable/boy_small" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="40sp"
+                    android:textColor="@android:color/white"
+                    tools:text="Andrew" />
+
+                <com.github.lzyzsd.circleprogress.ArcProgress
+                    xmlns:cpv="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="20dp"
+                    cpv:arc_angle="250"
+                    cpv:arc_unfinished_color="#82e9de"
+                    cpv:arc_finished_color="#00867d"
+                    cpv:arc_text_size="30dp"
+                    cpv:arc_text_color="@android:color/white"
+                    cpv:arc_suffix_text_size="15dp"
+                    cpv:arc_suffix_text_padding="0dp"
+                    cpv:arc_bottom_text="Reward Progress"
+                    cpv:arc_bottom_text_size="12sp"
+                    cpv:arc_max="100"
+                    tools:arc_progress="23" />
+            </LinearLayout>
+
+            <android.support.constraint.Barrier
+                android:id="@+id/horizontal_barrier_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="name_plate"/>
+
+            <LinearLayout
+                android:id="@+id/status_bar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_barrier_1"
+                android:divider="@drawable/vertical_divider"
+                android:orientation="horizontal"
+                android:dividerPadding="10dip"
+                android:showDividers="middle"
+                android:background="@color/status_bar_background"
+                android:baselineAligned="false">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/alerts_qty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textSize="20sp"
+                        android:textColor="@color/textColorPrimary"
+                        tools:text="1" />
+
+                    <TextView
+                        android:id="@+id/alerts_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_below="@id/alerts_qty"
+                        android:textSize="12sp"
+                        android:textColor="@color/textColorPrimary"
+                        android:text="ALERTS" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/todays_events_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/todays_events_qty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textSize="20sp"
+                        android:textColor="@color/textColorPrimary"
+                        tools:text="19" />
+
+                    <TextView
+                        android:id="@+id/todays_events_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_below="@id/todays_events_qty"
+                        android:textSize="12sp"
+                        android:textColor="@color/textColorPrimary"
+                        android:text="TODAY'S EVENTS" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reward_points_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:layout_gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/reward_points_qty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textSize="20sp"
+                        android:textColor="@color/textColorPrimary"
+                        tools:text="3" />
+
+                    <TextView
+                        android:id="@+id/reward_points_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_below="@id/reward_points_qty"
+                        android:textSize="12sp"
+                        android:textColor="@color/textColorPrimary"
+                        android:text="TODAY'S POINTS" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <android.support.constraint.Barrier
+                android:id="@+id/horizontal_barrier_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="status_bar"/>
+
+            <LinearLayout
+                android:id="@+id/action_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_barrier_2"
+                android:baselineAligned="false"
+                android:padding="15dp">
+
+                <ImageButton
+                    android:layout_width="75dp"
+                    android:layout_height="60dp"
+                    android:adjustViewBounds="true"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/camera"
+                    android:tint="@android:color/white"
+                    android:backgroundTint="#a1887f"/>
+                <ImageButton
+                    android:layout_width="75dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="6dp"
+                    android:adjustViewBounds="true"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/video"
+                    android:tint="@android:color/white"
+                    android:backgroundTint="#a1887f"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="6dp"
+                    android:adjustViewBounds="true"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    android:text="Add New Event"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#ef5350"/>
+
+
+
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</FrameLayout>
